@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Educator JS Codespace Template",
   "source": "src/index.html",
-  "homepage": "https://Cronoscar.github.io/PortafolioWEB",
+  "homepage": "https://github.com/microsoft/codespaces-teaching-template-js#readme",
   "scripts": {
     "start": "parcel",
     "build": "parcel build",
