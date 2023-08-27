@@ -33,7 +33,7 @@ const projectList = [
   {
     title: "CoFundador de Pixelcrafters",
     description:
-      "Cofundador de la emprese llamada PixelCrafters destinada a la distribucionn de productos con estampados y diseño en Pixelart",
+      "Cofundador de la emprese llamada PixelCrafters destinada a la distribucion de productos con estampados y diseño en PixelArt",
     url: "https://github.com/AdrianJMendez/PixelCrafters.git",
   },
   {
@@ -42,8 +42,6 @@ const projectList = [
       "Parte del grupo de trabajo del poryecto 'Lista de Contactos' de la Clase Algoritmos y Estructura de Datos de la UNAH",
     url: "https://github.com/AdrianJMendez/Proyecto_1.git",
   },
-
- 
 ];
 
 const Portfolio = () => {
