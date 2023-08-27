@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "Educator JS Codespace Template",
   "source": "src/index.html",
-  "homepage": "http://{Cronoscar}.github.io/{PortafolioWEB}",
+  "homepage": "http://Cronoscar.github.io/PortafolioWEB",
   "scripts": {
     "start": "parcel",
     "build": "parcel build",
-    "build-gh": "parcel build --public-url 'https://{Cronoscar}.github.io/{PortafolioWEB}'",
+    "build-gh": "parcel build --public-url 'https://Cronoscar.github.io/PortafolioWEB'",
     "predeploy": "npm run build-gh",
     "deploy": "gh-pages -d dist"
   },
