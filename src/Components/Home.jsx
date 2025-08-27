@@ -1,52 +1,81 @@
-/**
- * Home component
- *
- * The section at the top of the page to display image of your
- * choice, name and title that describes your career focus.
- */
-
 import React from "react";
 import arrowSvg from "../images/down-arrow.svg";
 import PropTypes from "prop-types";
-
-/**
- * Home background image
- *
- * Below is a sample image. Upload the image of your choice into the "images"
- * directory and import here for use. Then, set imageAltText to string that 
- * represents what you see in that image.
- *
- *
- * Need an image? Check out https://unsplash.com to download a photo you
- * freely use on your site.
- */
-import image from "../images/3.jpg";
-
-const imageAltText = "Adult female in office setting leaning against a glass wall while holding a platinum Microsoft Surface Pro 7 in tablet mode preparing to write with Microsoft Surface Pen";
+import image from "../images/1.png";
 
 const Home = ({ name, title }) => {
+
+  const scrollToAbout = () => {
+    const about = document.getElementById("info");
+    if (about) {
+      about.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
+
+  const scrollToPortfolio = () => {
+    const portfolio = document.getElementById("portfolio");
+    if (portfolio) {
+      portfolio.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
+  
+  const handleKeyDown = (e, callback) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      callback();
+    }
+  };
+
   return (
     <section id="home" className="min-height">
-      <img className="background" src={image} alt="" />
-      <div style={{ position: "absolute", top: "5rem", left: "2rem", width: "17rem" }}>
-        <h1>{name}</h1>
-        <h2>{title}</h2>
-      </div>
-      <div style={{ position: "absolute", bottom: "3rem", left: "50%" }}>
-        <img src={arrowSvg} style={{ height: "3rem", width: "3rem" }} alt={imageAltText} />
+      <img
+        className="background"
+        src={image}
+        alt="Fondo de pantalla abstracto"
+        style={{ width: "100%", height: "100%", objectFit: "cover", position: "absolute" }}
+      />
+
+      <div className="home-content">
+        <h1 className="home-title">{name}</h1>
+        <h2 className="home-subtitle">{title}</h2>
+
+    
+        <div
+          className="home-button"
+          onClick={scrollToPortfolio}
+          role="button"
+          tabIndex={0}
+          onKeyDown={(e) => handleKeyDown(e, scrollToPortfolio)}
+          style={{ cursor: "pointer", display: "inline-block" }}
+          aria-label="Ver proyectos de portafolio"
+        >
+          Ver Portafolio
+        </div>
+
+
+        <div
+          className="home-arrow"
+          onClick={scrollToAbout}
+          role="button"
+          tabIndex={0}
+          onKeyDown={(e) => handleKeyDown(e, scrollToAbout)}
+          style={{ cursor: "pointer" }}
+          aria-label="Ir a la sección Sobre Mí"
+        >
+          <img 
+            src={arrowSvg} 
+            style={{ height: "2.5rem", width: "2.5rem", opacity: "0.85" }} 
+            alt="Flecha para bajar a la sección Sobre Mí" 
+          />
+        </div>
       </div>
     </section>
   );
 };
 
-Home.defaultProps = {
-  name: "",
-  title: "",
-};
-
-Home.propTypes = {
-  name: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-};
+Home.defaultProps = { name: "", title: "" };
+Home.propTypes = { name: PropTypes.string.isRequired, title: PropTypes.string.isRequired };
 
 export default Home;

@@ -1,44 +1,86 @@
 import React from "react";
-import image from "../images/5.png";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import image1 from "../images/5.png";
+import image2 from "../images/6.png";
+import image3 from "../images/7.png";
+import image4 from "../images/13.png";
+import image5 from "../images/14.png";
 
-const imageAltText = "desktop with books and laptop";
-
+// eslint-disable-next-line no-sparse-arrays
 const projectList = [
+
   {
-    title: "CoFundador de Pixelcrafters",
+    title: "Sistema de facturación y gestión de inventario",
     description:
-      "Cofundador de la emprese llamada PixelCrafters destinada a la distribucion de productos con estampados y diseño en PixelArt",
-    url: "https://github.com/AdrianJMendez/PixelCrafters.git",
+      "Parte del grupo de trabajo del proyecto 'Sistema de facturación y gestión de inventario' en la clase Ingeniería de Software de la UNAH",
+    url: "https://proyectoingenieria-fe.onrender.com/",
+    preview: image2,
   },
   {
-    title: "App de lista de contactos",
+    title: "Aplicacion Full Stack tipo Deezer",
     description:
-      "Parte del grupo de trabajo del poryecto 'Lista de Contactos' de la Clase Algoritmos y Estructura de Datos de la UNAH",
-    url: "https://github.com/AdrianJMendez/Proyecto_1.git",
+      "Parte del grupo de trabajo del proyecto 'Aplicacion Full Stack tipo Deezer' en la clase Bases de Datos I de la UNAH",
+    url: "https://proyectoingenieria-fe.onrender.com/",
+    preview: image3,
+  }, 
+  {
+    title: "Topologia de red telefonica para una empresa pequeña",
+    description:
+      "Parte del grupo de trabajo del proyecto 'Topologia de red telefonica'en la clase Redes de Datos I de la UNAH",
+    url: "https://github.com/AdrianJMendez/PixelCrafters.git",
+    preview: image4,
+  },
+  {
+    title: "Topologia de red cableada/inalambrica para una empresa mediana",
+    description:
+      "Parte del grupo de trabajo del proyecto 'Topologia de red cableada/inalambrica'en la clase Redes de Datos II de la UNAH",
+    url: "https://github.com/AdrianJMendez/PixelCrafters.git",
+    preview: image5,
+  },
+  {
+    title: "Aplicacion Full Stack tipo E-commerce",
+    description:
+      "Parte del grupo de trabajo del proyecto 'Aplicacion Full Stack tipo E-commerce'en la clase Pogranacion Orientada a Objetos de la UNAH",
+    url: "https://github.com/AdrianJMendez/PixelCrafters.git",
+    preview: image1,
   },
 ];
 
 const Portfolio = () => {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 600,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 4000,
+    arrows: true,
+    adaptiveHeight: true,
+  };
+
   return (
     <section className="padding" id="portfolio">
-      <h2 style={{ textAlign: "center" }}>Portafolio</h2>
-      <div style={{ display: "flex", flexDirection: "row", paddingTop: "3rem" }}>
-        <div style={{ maxWidth: "40%", alignSelf: "center" }}>
-          <img
-            src={image}
-            style={{ height: "90%", width: "100%", objectFit: "cover" }}
-            alt={imageAltText}
-          />
-        </div>
-        <div className="container">
-          {projectList.map((project) => (
-            <div className="box" key={project.title}>
-              <a href={project.url} target="_blank" rel="noopener noreferrer">
-                <h3 style={{ flexBasis: "40px" }}>{project.title}</h3>
-              </a>
-              <p className="small">{project.description}</p>
-            </div>
-          ))}
+      <div className="portfolio-container">
+        <h2>Portafolio</h2>
+        <div className="portfolio-slider">
+          <Slider {...settings}>
+            {projectList.map((project) => (
+              <div key={project.title} className="portfolio-slide">
+                <a href={project.url} target="_blank" rel="noopener noreferrer">
+                  <img
+                    src={project.preview}
+                    alt={project.title}
+                    className="portfolio-image"
+                  />
+                  <h3>{project.title}</h3>
+                </a>
+                <p>{project.description}</p>
+              </div>
+            ))}
+          </Slider>
         </div>
       </div>
     </section>

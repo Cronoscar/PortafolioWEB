@@ -1,12 +1,16 @@
-/**
- * Header component
- *
- * Top navigation bar for your site. Set to remain visible as the
- * user scrolls so that they can constantly reach any part of your page.
- */
 import React from "react";
 
 const Header = () => {
+  const handleSmoothScroll = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: "smooth", 
+        block: "start"
+      });
+    }
+  };
+
   return (
     <div
       style={{
@@ -21,12 +25,45 @@ const Header = () => {
         zIndex: 10,
       }}
     >
-      <a href="#home">Inicio</a>
-      <a href="#about">Acerca De</a>
-      <a href="#portfolio">Portafolio</a>
-      <a href="#footer">Contacto</a>
+      <button 
+        onClick={() => handleSmoothScroll("home")}
+        style={linkButtonStyle}
+      >
+        Inicio
+      </button>
+      <button 
+        onClick={() => handleSmoothScroll("info")}
+        style={linkButtonStyle}
+      >
+        Acerca De
+      </button>
+      <button 
+        onClick={() => handleSmoothScroll("portfolio")}
+        style={linkButtonStyle}
+      >
+        Portafolio
+      </button>
+      <button 
+        onClick={() => handleSmoothScroll("footer")}
+        style={linkButtonStyle}
+      >
+        Contacto
+      </button>
     </div>
   );
+};
+
+
+const linkButtonStyle = {
+  background: "none",
+  border: "none",
+  color: "#333",
+  cursor: "pointer",
+  fontSize: "1rem",
+  fontWeight: "500",
+  padding: "0.5rem 1rem",
+  borderRadius: "4px",
+  transition: "all 0.3s ease",
 };
 
 export default Header;
