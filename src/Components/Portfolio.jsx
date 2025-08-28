@@ -16,85 +16,84 @@ import image10 from "../images/19.png";
 import image11 from "../images/20.png";
 import image12 from "../images/21.png";
 import image13 from "../images/22.png";
+import image14 from "../images/23.png";
 
-const projectList = [
-  {
+  const projectList = [ {
     title: "Sistema de facturación y gestión de inventario",
     description:
-      "Parte del grupo de trabajo del proyecto 'Sistema de facturación y gestión de inventario' en la clase Ingeniería de Software de la UNAH",
+      "Proyecto desarrollado en la clase de Ingeniería de Software en la UNAH: 'Sistema de facturación y gestión de inventario'.",
     url: "https://proyectoingenieria-fe.onrender.com/",
     preview: image2,
-    images: [image2, image10, image11,image12,image13],
-    role: "En este proyecto, participé en el desarrollo del módulo de facturación y la integración con el sistema de inventario. Colaboré en el diseño de la base de datos y la implementación de la API REST.",
+    images: [image2, image10, image11, image12, image13],
+    role: "En este proyecto participé en el desarrollo del módulo de facturación y en la integración con el sistema de inventario de una granja porcina. Colaboré en el diseño de la base de datos, la implementación de la arquitectura de software y la creación de la lógica de negocio.",
     challenges: [
       "Sincronización en tiempo real entre el inventario y las facturas",
       "Implementación de permisos y roles de usuario",
-      "Generación de reportes en PDF con datos actualizados",
+      "Generación de facturas en PDF",
+      "Dockerización del proyecto",
     ],
-    technologies: ["Java", "Spring Boot", "MySQL", "React", "Bootstrap"],
+    technologies: ["Sequelize", "SQL Server", "Docker", "React", "JWT"]
   },
   {
-    title: "Aplicacion Full Stack tipo Deezer",
+    title: "Aplicación Full Stack tipo Deezer",
     description:
-      "Parte del grupo de trabajo del proyecto 'Aplicacion Full Stack tipo Deezer' en la clase Bases de Datos I de la UNAH",
-    url: "https://proyectoingenieria-fe.onrender.com/",
+      "Proyecto desarrollado en la clase de Bases de Datos I en la UNAH: 'Aplicación Full Stack tipo Deezer'.",
+    url: "https://github.com/Cronoscar/deezer.git",
     preview: image3,
-    images: [image3, image8, image9],
-    role: "Desarrollé la funcionalidad de listas de reproducción y el sistema de recomendaciones basado en el historial de escucha. También participé en el diseño del esquema de la base de datos.",
+    images: [image3, image8, image9, image14],
+    role: "Desarrollé la funcionalidad de los módulos de autenticación, registro y recomendaciones. Además, diseñé el esquema de la base de datos.",
     challenges: [
       "Manejo de archivos de audio y metadatos",
-      "Algoritmos de recomendación eficientes",
-      "Sistema de streaming optimizado para diferentes calidades",
+      "Investigación sobre el dominio del proyecto"
     ],
-    technologies: ["Node.js", "Express", "MongoDB", "React", "Web Audio API"],
-  },
+    technologies: ["Spring Boot", "Oracle", "JavaScript"]
+}
+,
   {
-    title: "Topologia de red telefonica para una empresa pequeña",
+    title: "Topología de red telefónica para una empresa pequeña",
     description:
-      "Parte del grupo de trabajo del proyecto 'Topologia de red telefonica'en la clase Redes de Datos I de la UNAH",
-    url: "https://github.com/AdrianJMendez/PixelCrafters.git",
+      "Proyecto desarrollado en la clase de Redes de Datos I en la UNAH: 'Topología de red telefónica para una empresa pequeña'.",
+    url: "https://github.com/Cronoscar/Redes.git",
     preview: image4,
     images: [image4],
-    role: "Diseñé la topología de red y calculé los requisitos de ancho de banda. Implementé la configuración de los equipos de red y realicé pruebas de estrés.",
+    role: "Investigué acerca de la configuración de teléfonos IP, y colaboré en el diseño de la topología y la configuración de los equipos de red.",
     challenges: [
-      "Optimización del ancho de banda para voz y datos",
-      "Configuración de QoS para priorizar tráfico de voz",
-      "Plan de contingencia para fallos en la red",
+      "Investigación sobre las configuraciones de teléfonos IP",
+      "Definición de protocolos a utilizar"
     ],
-    technologies: ["Cisco Packet Tracer"],
-  },
-  {
-    title: "Topologia de red cableada/inalambrica para una empresa mediana",
+    technologies: ["Cisco Packet Tracer"]
+},
+    {
+    title: "Topología de red cableada/inalámbrica para una empresa mediana",
     description:
-      "Parte del grupo de trabajo del proyecto 'Topologia de red cableada/inalambrica'en la clase Redes de Datos II de la UNAH",
-    url: "https://github.com/AdrianJMendez/PixelCrafters.git",
+      "Proyecto desarrollado en la clase de Redes de Datos II en la UNAH: 'Topología de red cableada/inalámbrica para una empresa mediana'.",
+    url: "https://github.com/Cronoscar/Redes.git",
     preview: image5,
     images: [image5],
-    role: "Lideré el diseño de la red híbrida cableada/inalámbrica y coordine las pruebas de penetración y seguridad. Documenté toda la infraestructura de red.",
+    role: "Lideré el diseño de la red híbrida cableada/inalámbrica y coordiné las pruebas de seguridad, la configuración de la red inalámbrica y la configuración de los equipos.",
     challenges: [
-      "Integración segura entre red cableada e inalámbrica",
-      "Plan de escalabilidad para crecimiento futuro",
-      "Implementación de políticas de seguridad consistentes",
+      "Integración segura entre la red cableada e inalámbrica",
+      "Investigación de conceptos como 'Redundancia en capa 3'",
+      "Configuración de asignación automática de direcciones IP para los dispositivos inalámbricos"
     ],
-    technologies: ["Cisco Packet Tracer"],
+    technologies: ["Cisco Packet Tracer"]
   },
   {
-    title: "Aplicacion Full Stack tipo E-commerce",
+    title: "Aplicación Full Stack tipo E-commerce",
     description:
-      "Parte del grupo de trabajo del proyecto 'Aplicacion Full Stack tipo E-commerce'en la clase POO de la UNAH",
+      "Proyecto desarrollado en la clase de Programación Orientada a Objetos (POO) en la UNAH: 'Aplicación Full Stack tipo E-commerce'.",
     url: "https://github.com/AdrianJMendez/PixelCrafters.git",
     preview: image1,
-    images: [image1, image6,image7],
-    role: "Participé en el diseño de las tablas para una estructura eficiente. También Coordiné la organización del equipo de 4 personas para una mejor distribución de tareas. Del lado del frontend Contribuí en el desarrollo de diversas funcionalidades clave como el login, el renderizado de contenido integrando con la API las funcionalidades a mostrar como la lógica para la gestión de múltiples perfiles por usuario y la creación de listas personalizadas.",
+    images: [image1, image6, image7],
+    role: "Participé en el diseño de las tablas para garantizar una estructura eficiente. Contribuí en el desarrollo de funcionalidades clave como el inicio de sesión, el renderizado de contenido y el diseño de las interfaces de usuario.",
     challenges: [
-      "Dado que era un proyecto de una clase, el tiempo de entrega era de 2 semanas y media, el cual se logró.",
-      "Manejo de estados en frontend, para actualizar en tiempo real la interfaz según el usuario que se logueara.",
-      "Consumo de API, haciendo una integración correcta entre el backend, base de datos y frontend.",
-      "Implementación de búsqueda y filtrado, de contenido para mejorar la experiencia del usuario.",
-      "Investigación sobre cómo funcionan los procesos de pago con tarjetas, en el caso de Netflix para compra de cuentas (No implementado).",
+      "Tiempo reducido para la entrega del proyecto",
+      "Investigación sobre el dominio del proyecto",
+      "Diseño de logo, eslogan y nombre de la empresa"
     ],
-    technologies: ["SpringBoot", "MySQL", "Laravel + PHP"],
-  },
+    technologies: ["TypeScript", "Express.js", "Node.js", "MongoDB", "Trello"]
+  }
+,
 ];
 
 const Portfolio = ({ onModalStateChange }) => {
