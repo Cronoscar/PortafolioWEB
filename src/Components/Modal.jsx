@@ -11,20 +11,18 @@ const Modal = ({ project, onClose }) => {
       }
     };
 
-    // Guardar el elemento que tenía el foco antes de abrir el modal
+  
     const previousActiveElement = document.activeElement;
 
     document.addEventListener("keydown", handleEscape);
-    document.body.style.overflow = 'hidden';
 
-    // Enfocar el modal y el botón de cerrar
-    if (modalRef.current) {
-      modalRef.current.focus();
+    // Enfocar el botón de cerrar al abrir el modal
+    if (closeButtonRef.current) {
+      closeButtonRef.current.focus();
     }
 
     return () => {
       document.removeEventListener("keydown", handleEscape);
-      document.body.style.overflow = 'unset';
       
       // Devolver el foco al elemento anterior
       if (previousActiveElement) {
@@ -34,16 +32,7 @@ const Modal = ({ project, onClose }) => {
   }, [onClose]);
 
   const handleOverlayClick = (e) => {
-    // Cerrar solo si se hace clic directamente en el overlay
     if (e.target === e.currentTarget) {
-      onClose();
-    }
-  };
-
-  const handleOverlayKeyDown = (e) => {
-    // Permitir cerrar con Enter o Espacio cuando el overlay tiene el foco
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
       onClose();
     }
   };
@@ -54,14 +43,11 @@ const Modal = ({ project, onClose }) => {
     <div 
       className="modal-overlay" 
       onClick={handleOverlayClick}
-      onKeyDown={handleOverlayKeyDown}
       role="dialog"
       aria-modal="true"
       aria-labelledby="modal-title"
-      tabIndex={-1}
-      ref={modalRef}
     >
-      <div className="modal-content">
+      <div className="modal-content" ref={modalRef}>
         <button 
           ref={closeButtonRef}
           className="modal-close" 
@@ -77,7 +63,7 @@ const Modal = ({ project, onClose }) => {
         </div>
 
         <div className="modal-body">
-          {/* Sección Mi Rol */}
+        
           {project.role && (
             <div className="modal-section">
               <h3>Mi Rol</h3>
@@ -85,7 +71,7 @@ const Modal = ({ project, onClose }) => {
             </div>
           )}
 
-          {/* Sección Desafíos y Soluciones */}
+        
           {project.challenges && project.challenges.length > 0 && (
             <div className="modal-section">
               <h3>Desafíos y Soluciones</h3>
@@ -97,7 +83,7 @@ const Modal = ({ project, onClose }) => {
             </div>
           )}
 
-          {/* Sección Tecnologías Utilizadas */}
+          
           {project.technologies && project.technologies.length > 0 && (
             <div className="modal-section">
               <h3>Tecnologías utilizadas</h3>
@@ -111,7 +97,7 @@ const Modal = ({ project, onClose }) => {
             </div>
           )}
 
-          {/* Galería de imágenes */}
+         
           {project.images && project.images.length > 0 && (
             <div className="modal-section">
               <h3>Fotos del proyecto</h3>
